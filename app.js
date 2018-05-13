@@ -21,6 +21,13 @@ app.get("/",function(req,res){
     res.render("landing");
 });
 
+
+app.get("/gallery",function(req,res){
+    res.render("gallery");
+});
+
+
+
 app.get("/about",function(req,res){
     res.render("about");
 });
