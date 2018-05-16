@@ -1,12 +1,26 @@
 
 .navbar-inverse {
     background: #2c3e50;
+     z-index: 1;
 }
 
 .navbar-inverse .navbar-nav > li > a {
     color: white;}
 
-
-.navbar-inverse {
-    z-index: 1;
+.rightbar{
+    margin-top: -20px;
+    opacity: .7;
+    height: 100vh;
+}
+.rightbar ul li {
+    background-color: #222222;
+    color: white;
+    font-style: italic;
+}
+.rightbar ul a {
+    font-size: 15px;
+}
+.rightbar ul a:hover{
+    background-color: black;
+    color: white;
 }
