@@ -24,3 +24,17 @@
     background-color: black;
     color: white;
 }
+#footer{
+    font-size: 11px;
+    z-index: 1;
+    opacity: 1;
+    color: white;
+    margin-top: 50vh;
+}
+.social i{
+font-size: 40px;
+padding: 8px;
+}
+.social a{
+    color: white;
+}
