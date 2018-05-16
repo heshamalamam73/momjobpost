@@ -12,7 +12,6 @@ h1{
 }
 .gallery img{
   width: 230px;
-  padding: 10px;
   height: 300px;
   filter: grayscale(100%);
   transition: 1s;
@@ -20,4 +19,7 @@ h1{
 .gallery img:hover{
   filter: grayscale(0);
   transform: scale(1.1);
+}
+.img-thumbnail{
+  height:300px;
 }
