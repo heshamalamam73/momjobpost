@@ -35,11 +35,15 @@ app.get("/login", function(req,res){
     
     res.render("login");
 });
+app.get("/contact", function(req,res){
+    
+    res.render("contact");
+});
+
 app.get("/signin", function(req,res){
     
     res.render("signin");
 });
-
 
 
 

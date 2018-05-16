@@ -27,11 +27,7 @@
 
 /* login page style */
 
-body{
-    margin: 0;
-    padding: 0;
-    background-color: black;
-}
+
 .icon{
     border-radius: 50%;
     opacity: 0.8;
@@ -45,8 +41,8 @@ body{
 }
 .loginbox{
     width: 320px;
-    height: 320px;
-    top: 50%;
+    height: 550px;
+    top: 70%;
     left: 50%;
     background-color: black;
     position: absolute;
