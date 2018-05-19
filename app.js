@@ -1,8 +1,7 @@
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
-    path        = require("path")
-
+    path        = require("path");
 
 
 
@@ -35,14 +34,37 @@ app.get("/login", function(req,res){
     
     res.render("login");
 });
-app.get("/contact", function(req,res){
+app.get("/portfolio", function(req,res){
     
-    res.render("contact");
+    res.render("portfolio");
 });
 
 app.get("/signin", function(req,res){
     
     res.render("signin");
+});
+app.get("/jobs", function(req,res){
+    
+    res.render("jobs");
+});
+app.get("/courses", function(req,res){
+    
+    res.render("courses");
+});
+app.get("/Entertainment", function(req,res){
+    
+    res.render("Entertainment");
+});
+app.get("/commercial", function(req,res){
+    
+    res.render("commercial");
+});
+app.get("/jobs/newjob", function(req,res){
+    
+    res.render("newjob");
+});app.get("/jobs/showjobs", function(req,res){
+    
+    res.render("showjobs");
 });
 
 
