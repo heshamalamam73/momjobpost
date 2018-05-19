@@ -33,22 +33,22 @@
   animation: imageAnimation 50s linear infinite;
 }
 .slideshow li:nth-child(1) {
-  background-image: url("/images/img1.jpeg")
+  background-image: url("/images/jobs.jpg")
 }
 .slideshow li:nth-child(2) {
-  background-image: url("/images/img2.jpeg");
+  background-image: url("/images/entermnt.jpg");
   animation-delay: 10s;
 }
 .slideshow li:nth-child(3) {
-  background-image: url("/images/img3.jpeg");
+  background-image: url("/images/courses.jpg");
   animation-delay: 20s;
 }
 .slideshow li:nth-child(4) {
-  background-image: url("/images/img4.jpeg");
+  background-image: url("/images/commircl.jpg");
   animation-delay: 30s;
 }
 .slideshow li:nth-child(5) {
-  background-image: url("/images/img5.jpeg");
+  background-image: url("/images/momm.jpg");
   animation-delay: 40s;
 }
 @keyframes imageAnimation {
