@@ -22,7 +22,9 @@ var express        = require("express"),
 
 
 //connect mongoose
-mongoose.connect("mongodb://localhost/momuzio");
+// mongoose.connect("mongodb://localhost/momuzio");
+mongoose.connect("mongodb://momuzio:1234@ds119350.mlab.com:19350/momuzio");
+
 
 
 
@@ -200,7 +202,7 @@ app.post('/jobs', function(req, res){
     } else {
       console.log("jast added a new job");
       console.log(job);
-      res.redirect("/jobs")
+      res.redirect("/jobs");
     }
   });
 
@@ -231,6 +233,6 @@ app.get("/jobs/:id", function(req,res){
 
 
 
-app.listen(3000,function(){
+app.listen(process.env.PORT,process.env.ID,function(){
     console.log("the server started at 4000");
 });
