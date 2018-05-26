@@ -1,0 +1,34 @@
+<% include partials/header %>
+  <div class="container">
+    <div class="jumbotron">
+        <h1> dit <%= blog.title %> </h1>
+          <a class="btn btn-danger"  href="/">Home page<a>
+        <a class="btn btn-warning"  href="/store">Back<a>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+           <form  action="/store/<%=blog._id%>?_method=PUT" method="POST">
+          <label for="exampleFormControlTextarea1">post title </label>
+          <input type="text" name="blog[title]"  value="<%= blog.title %>"> <hr> <br>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">info </label>
+            <textarea name="blog[info]" class="form-control"><%= blog.info %></textarea>
+          </div>
+          <label for="exampleFormControlTextarea1">image url </label>
+          <input type="text" name="blog[image]" value="<%= blog.image %>" ><hr> <br>
+          <button class="ui big violet basic button" >Update post</button>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<% include partials/footer %>

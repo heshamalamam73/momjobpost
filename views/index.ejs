@@ -1,26 +1,44 @@
 <% include partials/header %>
-     <div class="col-lg-2 navbar-left navbar-inverse rightbar">
-              <ul class="list-group">
-                <li class="list-group-item black">Main menu</li>
-                <a class="list-group-item" href="/jobs">WORK AND SERVICES</a>
-                <a class="list-group-item" href="/courses">Educational site</a>
-                <a class="list-group-item" href="/Entertainment">Entertainment site</a>
-                <a class="list-group-item" href="/commercial">Commercial site</a>
-              </ul>
-              
-          <div id="footer">
-            <p>All rights belong to the owner of Page</p>
-            <a href="/about"><h5>Mahmoud hassan hamed</h5></a> 
-               <div class="social">
-                 <a href="https://www.facebook.com/mahmoudhassan993"><i class="fab fa-facebook-square"></i></a>
-                 <a href="#"><i class="fas fa-envelope"></i></a>
-                 <a href="#"><i class="fab fa-instagram"></i></a>
-                 <a href="#"><i class="fab fa-twitter"></i></a>
-                 <a href="#"><i class="fab fa-youtube"></i></a>
-              </div>
-              <p>copyright <i class="fas fa-copyright"></i> Momuzio 2018   </p>  
-          </div>
+
+
+<div class="container">
+      <div class="jumbotron">
+        <h1>Work and services category </h1>
+        <p>You can through this page to see jobs and services available </p>
+        <a href="/jobs/newjob" class="btn btn-success">Add new announcement</a>
+        <a class="btn btn-danger"  href="/">Back</a>
+      </div>
+
+<% jobs.forEach(function(job){ %>
+
+
+
+
+
+
+      <div class="itm_list">
+        <div class="job_img">
+          <img src="<%= job.image %>" >
         </div>
+        <div class="contant">
+          <h2> <a href="/jobs/<%= job._id %>" >  <%= job.Position_Type %>  </a></h2>
+          <h3><%= job.CampanyName %></h3>
+          <h4><%= job.address %></h4>
+          <h5><%= job.datetime %></h5>
+        </div>
+      </div>
+      <hr class="line">
+
+  <% }); %>
+      </div>
+
+
+
+
+
+
+
+
 
 
 

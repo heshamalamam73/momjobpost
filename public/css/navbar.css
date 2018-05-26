@@ -5,7 +5,8 @@
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: white;}
+    color:rgba(0, 0, 0, 0.95);
+  }
 
 .rightbar{
     margin-top: -20px;
@@ -13,7 +14,7 @@
     height: 100vh;
 }
 .rightbar ul li {
-    background-color: #222222;
+    background-color: #f4f4f4;
     color: white;
     font-style: italic;
 }

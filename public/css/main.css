@@ -16,12 +16,11 @@
 .bg{
     width: 100%;
   height: auto;
-    
-    
+
+
 }
 .col-lg-4 img{
-    
-    min-height: 480px;
+    min-height: 400px;
 }
 
 
@@ -46,7 +45,7 @@
     left: 50%;
     background-color: black;
     position: absolute;
-    transform: translate(-50%,-50%); // لتوسيط العنصر في وسط الصفحة 
+    transform: translate(-50%,-50%); // لتوسيط العنصر في وسط الصفحة
     box-sizing: border-box;
     color: azure;
    padding: 70px 30px;
@@ -102,4 +101,19 @@ h1{
 .loginbox a:hover{
     color: coral;
 }
+body{
+  background-image: url("/images/img1.jpeg");
+}
+.meta{
 
+  text-align: left;
+  padding: 20px;
+}
+.buttons{
+  display: inline-flex;
+  padding: 20px;
+
+}
+.caption {
+  font-family: 'Slabo 27px', serif;
+}

@@ -6,7 +6,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 .thumbnail > img, .thumbnail a > img {
     height: 300px;
- 
+
 }
 
 html {
@@ -67,7 +67,7 @@ dfn {
 h1 {
   margin: .67em 0;
   font-size: 2em;
-   
+
 }
 mark {
   color: #000;
@@ -4595,12 +4595,16 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color:#2185d0;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
-  color: #9d9d9d;
+  color: white;
+  font-size: 23px;
+  font-family: 'Audiowide', cursive;
 }
+
+
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
   color: #fff;
@@ -4610,11 +4614,12 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #9d9d9d;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #9d9d9d;
+  color: white;
+  font-weight: bold;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #fff;
+  color: blue;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
@@ -4965,13 +4970,13 @@ a.badge:focus {
   padding-top: 30px;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  color: inherit;
-  background-color: #222222;
+  /* color: inherit; */
+  background-color:#2185d0;
 }
 .jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
-  color:white; 
+  color:white;
 }
 .jumbotron p {
   margin-bottom: 15px;

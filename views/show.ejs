@@ -1,0 +1,115 @@
+<% include partials/header %>
+
+<div class="container">
+  <nav aria-label="breadcrumb black">
+    <ol class="breadcrumb ">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/jobs">jobs</a></li>
+      <li class="breadcrumb-item active" aria-current="page"> <%= job.Position_Type %></li>
+    </ol>
+  </nav>
+    <div class="imgcontant">
+      <img src="<%= job.image %>" alt="<%= job.Position_Type %>">
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-lg-4  ">
+        <table class="table table-hover table-dark">
+          <tbody>
+            <tr>
+              <td colspan="2">job Position: </td>
+              <td><%= job.Position_Type %></td>
+            </tr>
+            <tr>
+              <td colspan="2">Campany Name: </td>
+              <td><%= job.CampanyName %></td>
+            </tr>
+            <tr>
+              <td colspan="2">Address:</td>
+              <td><%= job.address %></td>
+            </tr>
+            <tr>
+              <td colspan="2">Name</td>
+              <td><%= job.name %></td>
+            </tr>
+            <tr>
+              <td colspan="2">E-mail</td>
+              <td><%= job.email %></td>
+            </tr>
+            <tr>
+              <td colspan="2">Telefone number</td>
+              <td><%= job.phone %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-12 col-md-8 col-lg-8  ">
+        <p><%= job.aboutJob %></p>
+      </div>
+    </div>
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include partials/footer %>

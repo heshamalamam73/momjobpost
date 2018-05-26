@@ -1,0 +1,32 @@
+<% include partials/header %>
+<div class="container">
+    <div class="jumbotron black">
+        <h1><i class="fas fa-camera-retro"></i> Momuzio Store</h1>
+
+          <button type="button" class="btn btn-dark"><a  href="/">go to the home page</a></button>
+          <a href="/store/new" class="btn btn-success ">Add new post</a>
+      </div>
+  <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% blogs.forEach(function(blog){ %>
+          <div class="col-md-4 col-lg-4 col-sm-6">
+            <div class="thumbnail">
+              <a href="/store/<%= blog._id%>"> <img src="<%= blog.image %>" alt=""></a>
+              <div class="caption">
+                <h2><%= blog.title %></h2>
+                <p><%= blog.info.substring(0,150); %></p>
+                <span><%= blog.created.toDateString() %></span>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+<% include partials/footer %>

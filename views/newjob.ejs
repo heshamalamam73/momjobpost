@@ -1,61 +1,48 @@
 <% include partials/header %>
-<form>
+
     <div class="container">
         <div class="jumbotron">
-            <h1> نموذج اضافة فرصة عمل </h1>
-            <button type="button" class="btn btn-secondary"><a  href="/">الصفحة الرئيسية</a></button>
+            <h1> Create a new announcement </h1>
+              <a class="btn btn-danger"  href="/">Home page<a>
+            <a class="btn btn-warning"  href="/jobs">Back<a>
         </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-12">
-              <div class="form-group">
-                  <input type="text" name="" placeholder="اسم الوظيفة">
-                  <br> <br>
-                  <input type="text" name="" placeholder="المحافظة">
-                  <br> <br>
-                  <input type="text" name="" placeholder=" عنوان االوظيفة بالتفصيل  ">
-                  <br> <br>
-                  <input type="text" name="" placeholder=" اسم الشركة او المؤسسة  ">
-                  <br> <br>
-                  <div class="form-group">
-                        <label for="exampleFormControlTextarea1">وصف العمل او الوظيفة</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                     </div>
-                  <div class="form-group">
-                        <label for="exampleFormControlTextarea1">االمؤهلات والخبرة المطلوبة </label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                     </div>
-                     <hr>
-                     <h3>معلومات الاتصال والتواصل </h3>
-                        <br> 
-                        <input type="text" name="" placeholder="رقم التليفون ">
-                        <br> <br>
-                        <input type="text" name="" placeholder="الايميل ">
-                         <br> <br>
-                  <input class="btn btn-primary" type="submit" value="اضافة">
+        <form  action="/jobs" method="post">
+          <h3 class="contactInfo">Job information</h3> <br>
+          <div class="input-group mb-2">
+            <label class="input-group-text" for="inputGroupSelect01">Category </label>
+            <select class="custom-select" id="inputGroupSelect01">
+              <option selected>Choose...</option>
+              <option value="1">Job offer</option>
+              <option value="2">looking for a job</option>
+            </select>
+          </div> <br> <hr>
+          <label>Position Type </label>
+          <input type="text" name="Position_Type"> <br><hr>
+          <label>image url </label>
+          <input type="text" name="image">
+          <br><br>
+          <input type="file" name="file" value="">
+          <hr>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">About job</label>
+            <textarea name="about_job" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <hr><br>
+          <h3 class="contactInfo">Contact information</h3> <br>
+          <label> Campany name </label>
+          <input type="text" name="Campany_name"> <br><hr>
+          <label> Address </label>
+          <input type="text" name="address"> <br><hr>
+          <label> Name </label>
+          <input type="text" name="name2"> <br><hr>
+          <label> E-mail </label>
+          <input type="email" name="email"> <br><hr>
+          <label> Phone number </label>
+          <input type="text" name="number"> <br><hr>
 
 
-                                       
-
-
-
-                 
-                                      
-
- 
-
-        
-        
-        
-        
-        
-          
-
-              </div>
-           </div>
-        </div>
-    </div>
-
-</form>
+          <button class="btn btn-success" type="submit" >add</button>
+        </form>
 
 
 
@@ -75,4 +62,7 @@
 
 
 
+
+
+</div>
 <% include partials/footer %>
