@@ -361,7 +361,7 @@ app.delete("/jobs/:id",isLogedIn,function(req,res){
     }
     try {
         await cloudinary.v2.uploader.destroy(job.imageId);
-        Job.remove();
+        job.remove();
         res.redirect('/jobs');
         } catch(err) {
           if(err) {
