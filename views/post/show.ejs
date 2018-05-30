@@ -17,9 +17,7 @@
             </div>
             <div class=" buttons">
                   <!--<a href="/store/<%=post._id%>/edit" class="ui orange basic button">Update Post</a>-->
-                    <form  action="/store/<%= post._id %>?_method=DELETE" method="POST">
-                        <button class="ui red basic button" >Delete post </button>
-                    </form>
+                    
             </div>
             <div class="well">
               <h3 >Comments</h3>
@@ -43,6 +41,10 @@
                 </form>
             </div>
         </div>
+        <hr>
+         <form  action="/store/<%= post._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-secondary btn-lg btn-block" >Delete post </button>
+                    </form>
 
     </div>
 
