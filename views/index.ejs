@@ -8,30 +8,32 @@
         <a href="/jobs/newjob" class="btn btn-success">Add new announcement</a>
         <a class="btn btn-danger"  href="/">Back</a>
       </div>
-
-<% jobs.forEach(function(job){ %>
-
-
-
-
-
-
-      <div class="itm_list">
-        <div class="job_img">
-          <img src="<%= job.image %>" >
-        </div>
-        <div class="contant">
-          <h2> <a href="/jobs/<%= job._id %>" >  <%= job.Position_Type %>  </a></h2>
-          <h3><%= job.CampanyName %></h3>
-          <h4><%= job.address %></h4>
-          <h5><%= job.datetime %></h5>
-        </div>
+      <% jobs.forEach(function(job){ %>
+  <div class="row">
+    <div class="col-xs-4 col-md-4 col-lg-4">
+      <div class="thumbnail">
+        <img src="<%= job.image %>" >
       </div>
+    </div>
+    <div class="col-xs-8 col-md-8 col-lg-8">
+      <div class="caption">
+        <h2> <a href="/jobs/<%= job._id %>" >  <%= job.Position_Type %>  </a></h2>
+        <h3><%= job.CampanyName %></h3>
+        <h4><%= job.address %></h4>
+        <h5><%= job.datetime %></h5>
+      </div>
+    </div>
+
+
+
+
+</div>
+
       <hr class="line">
 
   <% }); %>
-      </div>
 
+  </div>
 
 
 
