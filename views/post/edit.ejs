@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="jumbotron">
+        <h1> Edit <%= post.title %> </h1>
+          <a class="btn btn-danger"  href="/">Home page<a>
+        <a class="btn btn-warning"  href="/store">Back<a>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+           <form  action="/store/<%=post._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <label for="exampleFormControlTextarea1">post title </label>
+                <input type="text" name="post[title]"  value="<%= post.title %>"> <hr> <br>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">info </label>
+                    <textarea name="post[info]" class="form-control"><%= post.info %></textarea>
+                </div>
+                <!-- <label for="exampleFormControlTextarea1">image url </label> -->
+                <!-- <input type="text" name="post[image]" value="<%= post.image %>" ><hr> <br> -->
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image" accept="image/*">
+
+                <button class="ui big violet basic button" >Update post</button>
+        </form>
+      </div>
+    </div>
+</div>
+<% include ../partials/footer %>

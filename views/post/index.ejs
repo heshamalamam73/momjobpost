@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="jumbotron black">
+        <h1><i class="fas fa-camera-retro"></i> Momuzio Store</h1>
+
+          <button type="button" class="btn btn-dark"><a  href="/">go to the home page</a></button>
+          <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              Add New Post
+            </button>
+
+          <div class="collapse" id="collapseExample">
+              <hr><br>
+            <div class="card card-body">
+              <form  action="/store" method="post" enctype="multipart/form-data">
+                  <input type="text" name="title" placeholder="title"  class="form-control"><br>
+                  <textarea name="info" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="text" ></textarea><br>
+                  <label for="image">Choose image to upload </label>
+                  <input type="file" id="image" name="image" accept="image/*" required><br>
+                  <!-- <input type="text" name="image" placeholder="img url "  class="form-control"> -->
+                <button class="btn btn-success" type="submit" >add</button>
+              </form>
+            </div>
+          </div>
+      </div>
+      <div class="row text-center " style="display:flex; flex-wrap: wrap;">
+            <% posts.forEach(function(post){ %>
+              <div class="col-xs-12 col-md-12 col-lg-12 ">
+                <div class="thumbnail">
+                  <a href="/store/<%= post._id%>"> <img src="<%= post.image %>" alt=""></a>
+                  <div class="caption">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.info.substring(0,150); %></p>
+                    <span><%= post.created.toDateString() %></span>
+                    <a href="/store/<%= post._id%>"></a>
+                    <hr>
+                    <div class="input-group-append">
+                      <button type="button" class="btn btn-secondary btn-lg btn-block"><a  href="/store/<%= post._id %>" > Show more </a></button>
+                    </div>
+
+
+
+
+                  </div>
+                </div>
+              </div>
+
+            <% }); %>
+      </div>
+</div>
+
+
+<% include ../partials/footer %>

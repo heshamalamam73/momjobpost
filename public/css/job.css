@@ -11,10 +11,9 @@
 
 }
 .job_img{
-  width: 25%;
-
-  height: 100%;
-  float: left;
+width: 28%;
+height: 100%;
+float: left;
 }
 .contant{
 margin-left: 30px;
@@ -25,9 +24,10 @@ height: 100%;
 }
 .job_img img{
   height: 100%;
-  width: 100%;
+  width: 100;
   padding: 10px;
-}
+  min-width: 100px;
+
 .line{
   border-width: 2px;
   border-color: #f4f4f4;
@@ -46,7 +46,7 @@ select{
 
 .imgcontant img{
   margin:30px;
-  width: 80%;
+  width: 300px;
 }
 
 

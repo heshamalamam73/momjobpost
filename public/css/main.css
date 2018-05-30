@@ -20,16 +20,14 @@
 
 }
 .col-lg-4 img{
-    min-height: 400px;
+    min-height: auto;
 }
-
 
 /* login page style */
 
-
 .icon{
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.9;
     margin: 0;
     padding: 0;
     width: 100px;
@@ -43,7 +41,7 @@
     height: 550px;
     top: 70%;
     left: 50%;
-    background-color: black;
+    background-color: blue;
     position: absolute;
     transform: translate(-50%,-50%); // لتوسيط العنصر في وسط الصفحة
     box-sizing: border-box;
@@ -74,7 +72,7 @@ h1{
     background: transparent;
     outline: none;
     height: 40px;
-    color: #fff;
+    color:#bcbdbd;
     font-size: 16px;
 }
 .loginbox input[type="submit"]
@@ -82,15 +80,15 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: #fb2525;
+    background: #ffffff;
     font-size: 18px;
     border-radius: 20px;
-    color: #fff;
+    color:blue;
 }
 .loginbox input[type="submit"]:hover{
-    background-color: #929;
-    color: coral;
-    background: #654;
+    background-color: blue;
+    color: white;
+    background: #337ab7;
 }
 .loginbox a {
     color: chocolate;
@@ -116,4 +114,12 @@ body{
 }
 .caption {
   font-family: 'Slabo 27px', serif;
+}
+#pComment{
+  font-size: 17px;
+
+}
+.thumbnail{
+  width: 70%;
+  margin: auto;
 }

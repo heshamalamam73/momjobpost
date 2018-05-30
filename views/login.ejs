@@ -1,17 +1,18 @@
- <% include partials/header %>
 
-        <div class="loginbox">
-            <img src="/images/icon.png" class="icon">
-                <h1>Login here</h1>
-            <form>
-                <p>User name </p>
-            <input type="text" name="" placeholder="Enter your name here"  >
-            <p>password</p>
-                <input type="password" value="" placeholder="Your password">
-                <input type="submit" value="log in" name=""  > <br>
-                <a href="#" >Create new account </a> <br>
-                <a href="#" > Lost your password </a>
-            </form>
-        </div>
-    <script src="javascript.js" ></script>
+<% include partials/header %>
+
+       <div class="loginbox">
+           <img src="/images/icon.png" class="icon">
+               <h1>Sign in </h1>
+        <form class="" action="/login" method="POST">
+           <!-- <input type="text" name="" placeholder="Full name"  > -->
+           <input type="text" name="username" placeholder="User name"  >
+           <!-- <input type="text" name="" placeholder="Email"  > -->
+           <!-- <input type="text" name="" placeholder="Phone number"  > -->
+           <input type="password" name="password" placeholder="password">
+           <input type="submit" value="sign in" name=""  > <br>
+           <!-- <a href="#" >Have un account ? </a> <br> -->
+        </form>
+       </div>
+   <script src="javascript.js" ></script>
 <% include partials/footer %>

@@ -6,42 +6,40 @@
               <a class="btn btn-danger"  href="/">Home page<a>
             <a class="btn btn-warning"  href="/jobs">Back<a>
         </div>
-        <form  action="/jobs" method="post">
-          <h3 class="contactInfo">Job information</h3> <br>
-          <div class="input-group mb-2">
-            <label class="input-group-text" for="inputGroupSelect01">Category </label>
-            <select class="custom-select" id="inputGroupSelect01">
-              <option selected>Choose...</option>
-              <option value="1">Job offer</option>
-              <option value="2">looking for a job</option>
-            </select>
-          </div> <br> <hr>
-          <label>Position Type </label>
-          <input type="text" name="Position_Type"> <br><hr>
-          <label>image url </label>
-          <input type="text" name="image">
-          <br><br>
-          <input type="file" name="file" value="">
-          <hr>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">About job</label>
-            <textarea name="about_job" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <hr><br>
-          <h3 class="contactInfo">Contact information</h3> <br>
-          <label> Campany name </label>
-          <input type="text" name="Campany_name"> <br><hr>
-          <label> Address </label>
-          <input type="text" name="address"> <br><hr>
-          <label> Name </label>
-          <input type="text" name="name2"> <br><hr>
-          <label> E-mail </label>
-          <input type="email" name="email"> <br><hr>
-          <label> Phone number </label>
-          <input type="text" name="number"> <br><hr>
+        <form  action="/jobs" method="post" enctype="multipart/form-data">
+              <h3 class="contactInfo">Job information</h3> <br>
+                  <div class="input-group mb-2">
+                    <label class="input-group-text" for="inputGroupSelect01">Category </label>
+                    <select class="custom-select" id="inputGroupSelect01">
+                      <option selected>Choose...</option>
+                      <option value="1">Job offer</option>
+                      <option value="2">looking for a job</option>
+                    </select>
+                  </div> <br> <hr>
+                <label>Position Type </label>
+                <input type="text" name="Position_Type" required> <br><hr>
+                <label for="image">Image</label>
+                <input type="file" id="image" name="image" accept="image/*"  required>
+                  <br><br>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">About job</label>
+                    <textarea name="about_job" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <hr><br>
+                  <h3 class="contactInfo">Contact information</h3> <br>
+                  <label> Campany name </label>
+                  <input type="text" name="Campany_name"> <br><hr>
+                  <label> Address </label>
+                  <input type="text" name="address"> <br><hr>
+                  <label> Name </label>
+                <input type="text" name="name2"> <br><hr>
+                <label> E-mail </label>
+                <input type="email" name="email" required> <br><hr>
+                <label> Phone number </label>
+                <input type="text" name="number"> <br><hr>
 
 
-          <button class="btn btn-success" type="submit" >add</button>
+              <button class="btn btn-success" type="submit" >add</button>
         </form>
 
 

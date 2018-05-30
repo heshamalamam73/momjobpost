@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="jumbotron">
+        <h1> Creat new post </h1>
+          <a class="btn btn-danger"  href="/">Home page<a>
+        <a class="btn btn-warning"  href="/store">Back<a>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-lg-12">
+            <form  action="/store" method="post" enctype="multipart/form-data">
+              <label for="exampleFormControlTextarea1">post title </label>
+                <input type="text" name="title" > <hr> <br>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">info </label>
+                      <textarea name="info" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                   <label for="exampleFormControlTextarea1">image </label>
+                   <label for="image">Image</label>
+                   <input type="file" id="image" name="image" accept="image/*" required>
+
+                  <input type="text" name="image" placeholder="img url"><hr> <br>
+              <button class="btn btn-success" type="submit" >add</button>
+            </form>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

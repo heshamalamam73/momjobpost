@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="jumbotron">
+        <h1> Creat new Comment to <%= post.title %> </h1>
+          <a class="btn btn-danger"  href="/">Home page<a>
+        <a class="btn btn-warning"  href="/store">Back<a>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-lg-12">
+            <form  action="/store/<%= post._id %>/comments" method="post">
+                <input type="text" name="comment[author]" placeholder="author" > <hr> <br>
+                    <div class="form-group">
+                      <textarea name="comment[text]" class="form-control" placeholder="text" rows="3"></textarea>
+                    </div>
+              <button class="btn btn-success" type="submit" >Add Comment </button>
+            </form>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>

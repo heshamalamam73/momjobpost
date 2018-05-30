@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+    <div class="ui main text container">
+   	    <!-- <div class="ui huge header"><%=post.title%></div> -->
+        <div class="ui top attached segment">
+	        <div class="item">
+	           <img class="ui centered rounded image" src="<%= post.image %>">
+	            <div class="content">
+	                <div class="meta">
+                    <h2><%= post.title %></h2>
+                    <hr>
+	                </div>
+            	     <div class="description">
+            	        <p> <%= post.info %></p>
+                      <span><%= post.created.toDateString() %></span>
+            	     </div>
+	            </div>
+            </div>
+            <div class=" buttons">
+                  <a href="/store/<%=post._id%>/edit" class="ui orange basic button">Update Post</a>
+                    <form  action="/store/<%= post._id %>?_method=DELETE" method="POST">
+                        <button class="ui red basic button" >Delete post </button>
+                    </form>
+            </div>
+            <div class="well">
+              <h3 >Comments</h3>
+            <% post.comments.forEach(function(comment){ %>
+          <a href="#"><h3><%= comment.author %></h3></a>
+                    <p id="pComment"><%= comment.text %></p>
+
+            <% }) %>
+            <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-lg-12">
+                <form  action="/store/<%= post._id %>/comments" method="post">
+
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="comment[author]" placeholder="Name" >
+                          <textarea name="comment[text]" class="form-control" placeholder="Text" rows="3"></textarea>
+                        </div>
+                  <button class="btn btn-success" type="submit" >Add Comment </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<% include ../partials/footer %>
