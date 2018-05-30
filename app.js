@@ -362,7 +362,7 @@ app.delete("/jobs/:id",isLogedIn,function(req,res){
     try {
         await cloudinary.v2.uploader.destroy(job.imageId);
         Job.remove();
-        res.redirect('/store');
+        res.redirect('/jobs');
         } catch(err) {
           if(err) {
             return res.redirect("back");
