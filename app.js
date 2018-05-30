@@ -124,46 +124,36 @@ app.get("/store/:id", function(req,res){
 });
 //edit post
 app.get("/store/:id/edit",isLogedIn,function(req,res){
-  Post.findById(req.params.id,function(err,foundpost){
+  Post.findById(req.params.id,function(err,foundPost){
     if(err){
       console.log(err);
       res.redirect("/");
 
     }else{
-        res.render("post/edit",{post: foundpost});
+        res.render("post/edit",{post: foundPost});
     }
   });
 });
-// app.put("/store/:id", upload.single('image'), function(req,res){
-//   Post.findById(req.params.id,async function(err, post) {
-//     if(err){
-//       console.log(err);
-//       res.redirect("/store");
-//     }else {
-//       if(req.file) {
-//         try {
-//           await cloudinary.v2.uploader.destroy(post.imageId);
-//           var result = await cloudinary.v2.uploader.upload(req.file.path);
-//           post.imageId = result.public_id;
-//           post.image = result.secure_url;
-//           } catch(err) {
-//             return res.redirect("/store");
-//           }
-//         }
-//         post.title = req.body.title;
-//         post.info = req.body.info;
-//         post.save();
-//         res.redirect("/store/" + req.params.id);
-//     }
-//   });
-// });
-app.put("/store/:id", function(req,res){
-  Post.findByIdAndUpdate(req.params.id, req.body.post, function(err,foundpost) {
+app.put("/store/:id", upload.single('image'), function(req,res){
+  Post.findById(req.params.id, async function(err, post) {
     if(err){
       console.log(err);
       res.redirect("/store");
-    }else {
-      res.redirect("/store/" + req.params.id);
+    } else {
+      if(req.file) {
+        try {
+          await cloudinary.v2.uploader.destroy(post.imageId);
+          var result = await cloudinary.v2.uploader.upload(req.file.path);
+          post.imageId = result.public_id;
+          post.image = result.secure_url;
+          } catch(err) {
+            return res.redirect("/store");
+          }
+        }
+        post.title = req.body.title;
+        post.info = req.body.info;
+        post.save();
+        res.redirect("/store/" + req.params.id);
     }
   });
 });
