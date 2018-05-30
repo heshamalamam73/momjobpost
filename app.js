@@ -134,7 +134,7 @@ app.get("/store/:id/edit",isLogedIn,function(req,res){
     }
   });
 });
-app.put("/store/:id", upload.single('image'), function(req,res){
+app.put("/store/:id",isLogedIn, upload.single('image'), function(req,res){
   Post.findById(req.params.id, async function(err, post) {
     if(err){
       console.log(err);
@@ -353,6 +353,24 @@ app.get("/jobs/:id", function(req,res){
   });
 
 });
+app.delete("/jobs/:id",isLogedIn,function(req,res){
+  //delete post
+  Job.findById(req.params.id, async function(err, job){
+    if(err){
+    return  res.redirect('/jobs');
+    }
+    try {
+        await cloudinary.v2.uploader.destroy(job.imageId);
+        Job.remove();
+        res.redirect('/store');
+        } catch(err) {
+          if(err) {
+            return res.redirect("back");
+          }
+    }
+  });
+});
+
 
 //finish job codes here
 function isLogedIn(req, res, next){

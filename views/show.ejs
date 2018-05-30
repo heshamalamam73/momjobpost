@@ -71,6 +71,9 @@
             </div>
       <button class="btn btn-success" type="submit" >Add Comment </button>
     </form>
+       <form  action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+           <button class="ui red basic button" >Delete post </button>
+       </form>
 
 
 
