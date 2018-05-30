@@ -134,39 +134,50 @@ app.get("/store/:id/edit",isLogedIn,function(req,res){
     }
   });
 });
-app.put("/store/:id", upload.single('image'), function(req,res){
-  Post.findById(req.params.id,async function(err,post) {
+// app.put("/store/:id", upload.single('image'), function(req,res){
+//   Post.findById(req.params.id,async function(err, post) {
+//     if(err){
+//       console.log(err);
+//       res.redirect("/store");
+//     }else {
+//       if(req.file) {
+//         try {
+//           await cloudinary.v2.uploader.destroy(post.imageId);
+//           var result = await cloudinary.v2.uploader.upload(req.file.path);
+//           post.imageId = result.public_id;
+//           post.image = result.secure_url;
+//           } catch(err) {
+//             return res.redirect("/store");
+//           }
+//         }
+//         post.title = req.body.title;
+//         post.info = req.body.info;
+//         post.save();
+//         res.redirect("/store/" + req.params.id);
+//     }
+//   });
+// });
+app.put("/store/:id", function(req,res){
+  Post.findByIdAndUpdate(req.params.id, req.body.post, function(err,foundpost) {
     if(err){
       console.log(err);
       res.redirect("/store");
     }else {
-      if(req.file) {
-        try {
-          await cloudinary.v2.uploader.destroy(post.imageId);
-          var result = await cloudinary.v2.uploader.upload(req.file.path);
-          post.imageId = result.public_id;
-          post.image = result.secure_url;
-          } catch(err) {
-            return res.redirect("/store");
-          }
-        }
-        post.title = req.body.title;
-        post.info = req.body.info;
-        post.save();
-        res.redirect("/store/" + req.params.id);
+      res.redirect("/store/" + req.params.id);
     }
   });
 });
 // destroy post
 app.delete("/store/:id",isLogedIn,function(req,res){
   //delete post
-  Post.findById(req.params.id,async function(err,post){
+  Post.findById(req.params.id, async function(err, post){
     if(err){
-      res.redirect('/store')
-    }try {
+    return  res.redirect('/store');
+    }
+    try {
         await cloudinary.v2.uploader.destroy(post.imageId);
         post.remove();
-        res.redirect('/store')
+        res.redirect('/store');
         } catch(err) {
           if(err) {
             return res.redirect("back");
@@ -189,7 +200,7 @@ Post.findById(req.params.id,function(err,post){
   } else {
     res.render("comments/new",{post: post});
   }
-})
+});
 });
 
 app.post("/store/:id/comments",function(req,res){
