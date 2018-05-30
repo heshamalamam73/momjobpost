@@ -7,39 +7,40 @@ var express               = require("express"),
     Job                   = require("./models/job"),
     passport              = require("passport"),
     Post                  = require("./models/post"),
+    // Post2                 = require("./models/post2")
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
-    path              = require("path"),
+   path              = require("path"),
     passportLocalMongoose = require("passport-local-mongoose"),
     Comment               = require("./models/comment"),
     mongoose              = require("mongoose");
     //start uploud photo
     var multer = require('multer');
-    var storage = multer.diskStorage({
-        filename: function(req, file, callback) {
-          callback(null, Date.now() + file.originalname);
-        }
-      });
-      var imageFilter = function (req, file, cb) {
-          // accept image files only
-          if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
-              return cb(new Error('Only image files are allowed!'), false);
-          }
-          cb(null, true);
-      };
-    var upload = multer({ storage: storage, fileFilter: imageFilter})
-      
-    var cloudinary = require('cloudinary');
-      cloudinary.config({
-        cloud_name: 'momuzio',
-        api_key: "136814375265717",
-        api_secret: "-PaslMt7szwG3MoZyIiIn7E5Sxk"
-      });
-      // end uploud photo
+var storage = multer.diskStorage({
+  filename: function(req, file, callback) {
+    callback(null, Date.now() + file.originalname);
+  }
+});
+var imageFilter = function (req, file, cb) {
+    // accept image files only
+    if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/i)) {
+        return cb(new Error('Only image files are allowed!'), false);
+    }
+    cb(null, true);
+};
+var upload = multer({ storage: storage, fileFilter: imageFilter})
+
+var cloudinary = require('cloudinary');
+cloudinary.config({
+  cloud_name: 'momuzio',
+  api_key: "136814375265717",
+  api_secret: "-PaslMt7szwG3MoZyIiIn7E5Sxk"
+});
+// end uploud photo
 
     //connect mongoose
     // mongoose.connect("mongodb://localhost/momuzio");
-   mongoose.connect("mongodb://momuzio:1234@ds119350.mlab.com:19350/momuzio");
+    mongoose.connect("mongodb://momuzio:1234@ds119350.mlab.com:19350/momuzio");
 
 
     //app config
@@ -71,8 +72,8 @@ app.get("/",function(req,res){
     res.render("landing");
 });
 app.get("/secret",isLogedIn,function(req, res){
-  res.render("secret");
-});
+  res.render("secret")
+})
 
 
 //store routes  start
@@ -96,13 +97,13 @@ app.post("/store",isLogedIn, upload.single('image'),function(req,res){
   var image = result.secure_url;
   var imageId = result.public_id;
 
-  var newpost = {title :title, info:info , image:image,imageId:imageId };
+  var newpost = {title :title, info:info , image:image,imageId:imageId }
   Post.create(newpost,function(err,newPost){
     if(err){console.log(err);
     } else {
       console.log("new post was added:");
       console.log(newPost);
-      res.redirect("/store");
+      res.redirect("/store")
     }
   });
   });
@@ -115,7 +116,7 @@ app.get("/store/:id", function(req,res){
   Post.findById(req.params.id).populate("comments").exec(function(err, foundPost){
     if(err){
       console.log(err);
-      res.redirect("/");
+      res.redirect("/")
     } else {
       res.render("post/show",{ post: foundPost});
     }
@@ -139,7 +140,7 @@ app.put("/store/:id", upload.single('image'), function(req,res){
       console.log(err);
       res.redirect("/store");
     }else {
-      if (req.file) {
+      if(req.file) {
         try {
           await cloudinary.v2.uploader.destroy(post.imageId);
           var result = await cloudinary.v2.uploader.upload(req.file.path);
@@ -152,7 +153,7 @@ app.put("/store/:id", upload.single('image'), function(req,res){
         post.title = req.body.title;
         post.info = req.body.info;
         post.save();
-          res.redirect("/store/" + req.params.id);
+        res.redirect("/store/" + req.params.id);
     }
   });
 });
@@ -161,11 +162,11 @@ app.delete("/store/:id",isLogedIn,function(req,res){
   //delete post
   Post.findById(req.params.id,async function(err,post){
     if(err){
-      res.redirect('/store');
+      res.redirect('/store')
     }try {
         await cloudinary.v2.uploader.destroy(post.imageId);
         post.remove();
-        res.redirect('/store');
+        res.redirect('/store')
         } catch(err) {
           if(err) {
             return res.redirect("back");
@@ -188,14 +189,14 @@ Post.findById(req.params.id,function(err,post){
   } else {
     res.render("comments/new",{post: post});
   }
-});
+})
 });
 
 app.post("/store/:id/comments",function(req,res){
   //lookup posts using ID
   Post.findById(req.params.id,function(err,post){
     if(err){console.log(err);
-      res.redirect("/store",{post: post});
+      res.redirect("/store",{post: post})
     } else {
       Comment.create(req.body.comment,function(err,comment){
         if(err){
@@ -217,14 +218,14 @@ Job.findById(req.params.id,function(err,job){
   } else {
     res.render("comments/new",{job: job});
   }
-});
+})
 });
 
 app.post("/jobs/:id/comments",function(req,res){
   //lookup posts using ID
   Job.findById(req.params.id,function(err,job){
     if(err){console.log(err);
-      res.redirect("/jobs",{job: job});
+      res.redirect("/jobs",{job: job})
     } else {
       Comment.create(req.body.comment,function(err,comment){
         if(err){
@@ -357,14 +358,14 @@ function isLogedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();
   }
-  res.redirect("/login");
+  res.redirect("/login")
 }
 
 
 
-//app.listen(3000,function(){
-    //console.log("the server started at 4000");
-//});
+// app.listen(3000,function(){
+//     console.log("the server started at 4000");
+// });
 
 
 
