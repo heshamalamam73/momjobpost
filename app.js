@@ -353,15 +353,15 @@ app.get("/jobs/:id", function(req,res){
   });
 
 });
-app.delete("/jobs/:id",isLogedIn,function(req,res){
+app.delete("/jobs/:id", isLogedIn ,function(req,res){
   //delete post
-  Job.findById(req.params.id, async function(err, job){
+  Job.findById(req.params.id, async function(err, foundjob){
     if(err){
     return  res.redirect('/jobs');
     }
     try {
-        await cloudinary.v2.uploader.destroy(job.imageId);
-        job.remove();
+        await cloudinary.v2.uploader.destroy(foundjob.imageId);
+        foundjob.remove();
         res.redirect('/jobs');
         } catch(err) {
           if(err) {
