@@ -29,7 +29,7 @@ header nav {
 }
 @media (max-width:600px) {
   header{
-    width:100%;
+  
     
     flex-direction: column;
 
@@ -202,8 +202,8 @@ section p{
 }
 @media (max-width:600px) {
   section {
-    padding:20px 20px ;
-    width:100%;
+    padding:20px 50px ;
+  
 
 }
 .destinations{
@@ -221,6 +221,7 @@ section p{
   }
   .destinations .grid  {
     flex-direction: column;
+    width :100%;
 
   }
 }
