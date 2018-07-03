@@ -382,4 +382,8 @@ footer p {
     width :100%;
     
   }
+  .all{
+    width:100% 
+    min-width:100%;
+  }
 }
