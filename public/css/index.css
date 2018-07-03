@@ -369,5 +369,10 @@ footer p {
   opacity: 0.7;
 }
 @media (max-width:640px){
-  footer
+  body{
+    width :100%;
+    min-width:100%;
+    max-width:100%;
+    
+  }
 }
