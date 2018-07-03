@@ -373,6 +373,9 @@ app.delete("/jobs/:id", isLogedIn ,function(req,res){
 
 
 //finish job codes here
+app.get("/about",function(req,res){
+  res.render("/about");
+});
 function isLogedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();
