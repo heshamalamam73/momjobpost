@@ -200,9 +200,7 @@ section p{
 
 }
 @media (max-width:640px) {
-  section{
-    padding: 50px 20px;
-  }
+  
 
 }
 .destinations{
@@ -312,7 +310,6 @@ section:not(.hero):nth-child(even){
   }
   .testimonials form input {
     flex-direction: column;
-    margin: 20px;
     align-items: center;
     align-content: center;
     width: 100%;
