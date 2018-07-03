@@ -43,3 +43,11 @@ padding: 8px;
 .black{
     background-color: #222222;
 }
+@media (max-width:640 ){
+    navbar-inverse{
+    width:100%;
+    margin:0;
+    padding:0;
+    max-width:100%;
+    }
+}
