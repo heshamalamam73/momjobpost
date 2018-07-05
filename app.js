@@ -253,7 +253,9 @@ app.get("/register", function(req,res){
 
     res.render("register");
 });
-
+app.get ("/about", function(req,res){
+  res.render("about");
+});
 app.post("/register",function(req,res){
 User.register(new User({username:req.body.username}),
 req.body.password,function(err, user){
@@ -373,9 +375,6 @@ app.delete("/jobs/:id", isLogedIn ,function(req,res){
 
 
 //finish job codes here
-app.get("/about",function(req,res){
-  res.render("about");
-});
 function isLogedIn(req, res, next){
   if(req.isAuthenticated()){
     return next();
