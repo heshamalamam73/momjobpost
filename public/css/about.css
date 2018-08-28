@@ -103,7 +103,7 @@ body{
 }
 
 .img{
-	background-image: url('img1.jpeg');
+	background-image: url('/images/img1.jpeg');
 	opacity: .5;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
