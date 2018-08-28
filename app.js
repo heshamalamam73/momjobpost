@@ -72,7 +72,7 @@ cloudinary.config({
 
 //start routes
 app.get("/",function(req,res){
-    res.render("landing");
+    res.render("index.html");
 });
 app.get("/secret",isLogedIn,function(req, res){
   res.render("secret")

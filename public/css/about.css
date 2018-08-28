@@ -30,7 +30,7 @@ body{
 	font-family: 'Frijole', cursive;
 	font-weight: bold;
 	letter-spacing: 20px;
-
+	opacity: .6;
 	
 
 
@@ -103,9 +103,11 @@ body{
 }
 
 .img{
-	background-image: url("/images/img1.jpeg");
+	background-image: url('img1.jpeg');
 	opacity: .5;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
+	border-radius: 30px;
 	
 }
 
@@ -183,18 +185,18 @@ p{
 	
 	background-color: #e4d836;
 }
-
+.skills{
+	opacity: 0;
+	transition: opacity 1s;
+}
 .ds{
 	opacity: 1;
 	height: 300px;
 }
-@media (max-width:600px) {
+@media (max-width:480px) {
 	.list{
 	display: block;
-	
 	margin: auto ;
-
-	
 		}
  .list li a{
 	list-style: none;
@@ -202,6 +204,7 @@ p{
 	color: white;
 	font-family: 'Tulpen One', cursive;
 	display: block;
+	height: auto;
 
 			}
  .rightSide-header h1{
@@ -212,6 +215,7 @@ p{
 	font-weight: bold;
 	letter-spacing: 10px;
 	opacity: .8;
+	height: auto;
 	
 }		
 .rightSide-header h3{
@@ -226,7 +230,6 @@ p{
 }
 .p1,.p2,.p3{
 	width: 90%;
-	height: 200px;
 	background-color: #383939;
 	margin: auto;
 	text-align: center;
@@ -234,13 +237,15 @@ p{
 	font-size: 15px;
 	color: white;
 	opacity: .7;
+	height: auto;
 
 }
 .col-lg-4 button{
 	width: 80%;
 }
 .img{
-	display: none;
+	width: 100%;
+	height: 400px;
 	
 }
 .skills .content .col-lg-3{
@@ -255,8 +260,12 @@ p{
 
 
 }
-
+.mainclass .row{
+	display: block;
+	height: auto;
+	margin: 0;
 }
+
 
 .bg-dark ,.navbar ,.navbar-expand-sm ,.navbar-dark{
 	background-color: black;
