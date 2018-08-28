@@ -257,7 +257,7 @@ app.get("/register", function(req,res){
     res.render("register");
 });
 app.get ("/about", function(req,res){
-  res.render("about");
+  res.render("about.html");
 });
 app.post("/register",function(req,res){
 User.register(new User({username:req.body.username}),
