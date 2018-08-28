@@ -49,6 +49,9 @@ cloudinary.config({
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(express.static(path.join(__dirname, 'public')));
     app.use(express.static("public"));
+    app.use(express.static(__dirname +'/views'));  // for reading html files
+    app.use(express.static(__dirname +'/public'));// for reading css files
+    
     app.set('views', __dirname + '/views');
     app.use(methodOverride("_method"));
 
@@ -135,7 +138,7 @@ app.get("/store/:id/edit",isLogedIn,function(req,res){
   });
 });
 app.put("/store/:id",isLogedIn, upload.single('image'), function(req,res){
-  Post.findById(req.params.id, async function(err, post) {
+  Post.findById(req.params.id, async function(err, post){
     if(err){
       console.log(err);
       res.redirect("/store");
@@ -197,7 +200,7 @@ app.post("/store/:id/comments",function(req,res){
   //lookup posts using ID
   Post.findById(req.params.id,function(err,post){
     if(err){console.log(err);
-      res.redirect("/store",{post: post})
+      res.redirect("/store",{post: post});
     } else {
       Comment.create(req.body.comment,function(err,comment){
         if(err){
@@ -219,7 +222,7 @@ Job.findById(req.params.id,function(err,job){
   } else {
     res.render("comments/new",{job: job});
   }
-})
+});
 });
 
 app.post("/jobs/:id/comments",function(req,res){
