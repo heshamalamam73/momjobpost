@@ -75,7 +75,7 @@ body{
 	text-align: center;
 	color: white;
 	font-family: 'Tulpen One', cursive;
-	margin-
+	
 
 }
 .list li a:hover{
@@ -182,17 +182,9 @@ p{
 .skills .content .col-lg-3:hover{
 	opacity: 1;
 	color: black;
-	
 	background-color: #e4d836;
 }
-.skills{
-	opacity: 0;
-	transition: opacity 1s;
-}
-.ds{
-	opacity: 1;
-	height: 300px;
-}
+
 @media (max-width:480px) {
 	.list{
 	display: block;
@@ -253,7 +245,7 @@ p{
 	height: auto;
 	background-color: #383939;
 	width: 70%;
-	padding: auto;
+
 	text-align: left;
 	font-size: 16PX;
 	margin :10px auto;
@@ -266,9 +258,5 @@ p{
 	margin: 0;
 }
 
-
-.bg-dark ,.navbar ,.navbar-expand-sm ,.navbar-dark{
-	background-color: black;
-	color: black;
 }
 
