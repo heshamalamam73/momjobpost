@@ -10,11 +10,11 @@ var express               = require("express"),
     // Post2                 = require("./models/post2")
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
-   path              = require("path"),
+    path              = require("path"),
     passportLocalMongoose = require("passport-local-mongoose"),
     Comment               = require("./models/comment"),
     mongoose              = require("mongoose");
-    Port = 4000 || process.env.PORT;
+  
     //start uploud photo
     var multer = require('multer');
 var storage = multer.diskStorage({
@@ -407,6 +407,8 @@ if (process.env.NODE_ENV === 'production') {
 
 
 //
+const Port = process.env.PORT || 4000;
+
 app.listen(Port,function(){
     console.log("the server started at 4000");
 });
