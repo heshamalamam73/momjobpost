@@ -14,6 +14,7 @@ var express               = require("express"),
     passportLocalMongoose = require("passport-local-mongoose"),
     Comment               = require("./models/comment"),
     mongoose              = require("mongoose");
+    Port = 4000 || process.env.PORT;
     //start uploud photo
     var multer = require('multer');
 var storage = multer.diskStorage({
@@ -391,12 +392,21 @@ function isLogedIn(req, res, next){
 //     console.log("the server started at 4000");
 // });
 
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 
 
 
 
 //
-app.listen(process.env.PORT,process.env.ID,function(){
+app.listen(Port,function(){
     console.log("the server started at 4000");
 });
